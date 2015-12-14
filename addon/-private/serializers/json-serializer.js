@@ -12,6 +12,7 @@ import {
 import { errorsArrayToHash } from "ember-data/-private/adapters/errors";
 
 var get = Ember.get;
+var set = Ember.set;
 var isNone = Ember.isNone;
 var merge = Ember.merge;
 
@@ -1075,7 +1076,7 @@ export default Serializer.extend({
         payloadKey = this.keyForAttribute(key, 'serialize');
       }
 
-      json[payloadKey] = value;
+      set(json, payloadKey, value);
     }
   },
 
